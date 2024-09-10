@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About DevLaunch - Empowering Ideas and Developers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- Navbar (same as in the hero section) -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-indigo-600">DevLaunch</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-indigo-600">Home</a>
+                    <a href="#" class="text-indigo-600">About</a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-600">Services</a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-600">Contact</a>
+                    <button class="px-4 py-2 text-indigo-600 border border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition">Sign In</button>
+                    <button class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">Sign Up</button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menuToggle" class="text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Home</a>
+                <a href="#" class="block px-3 py-2 text-indigo-600">About</a>
+                <a href="#" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Services</a>
+                <a href="#" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+                <button class="w-full mt-2 px-4 py-2 text-indigo-600 border border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition">Sign In</button>
+                <button class="w-full mt-2 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-8 text-center">About DevLaunch</h1>
+        
+        <!-- Mission Statement -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-12">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4">Our Mission</h2>
+            <p class="text-gray-700 text-lg leading-relaxed">
+                At DevLaunch, we're on a mission to bridge the gap between aspiring developers and innovative startups. We believe in creating opportunities for learning and growth while providing affordable solutions for emerging businesses. Our platform is built on the principles of collaboration, accessibility, and mutual success.
+            </p>
+        </div>
+        
+        <!-- What We Do -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">For Developers</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>Gain real-world experience on actual projects</li>
+                    <li>Earn valuable internship certificates</li>
+                    <li>Build a strong portfolio and network</li>
+                    <li>Access paid opportunities as you grow</li>
+                </ul>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">For Startups</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>Access affordable development services</li>
+                    <li>Tap into a pool of motivated, fresh talent</li>
+                    <li>Flexible payment options, including pay-after-satisfaction</li>
+                    <li>Contribute to open-source and developer education</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Our Story -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-12">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4">Our Story</h2>
+            <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                DevLaunch was born out of a personal journey. Our founder, once a student struggling to find internships and real-world projects, recognized a widespread challenge faced by many aspiring developers. Simultaneously, he observed the hurdles new entrepreneurs encountered when trying to bring their ideas to life due to high development costs.
+            </p>
+            <p class="text-gray-700 text-lg leading-relaxed">
+                This dual perspective led to the creation of DevLaunch - a platform that addresses both sides of the equation. We're not just a service; we're a community dedicated to fostering growth, learning, and innovation in the tech world.
+            </p>
+        </div>
+        
+        <!-- Team Section -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Meet Our Team</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="/api/placeholder/150/150" alt="Team Member 1" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900">John Doe</h3>
+                    <p class="text-indigo-600">Founder & CEO</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="/api/placeholder/150/150" alt="Team Member 2" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900">Jane Smith</h3>
+                    <p class="text-indigo-600">Head of Development</p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="/api/placeholder/150/150" alt="Team Member 3" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900">Mike Johnson</h3>
+                    <p class="text-indigo-600">Community Manager</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Call to Action -->
+        <div class="text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Join the DevLaunch Community</h2>
+            <p class="text-xl text-gray-700 mb-8">Whether you're a developer looking to grow or a startup ready to launch, we're here to help you succeed.</p>
+            <button class="px-8 py-3 bg-indigo-600 text-white text-lg rounded hover:bg-indigo-700 transition">Get Started Today</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            var mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
