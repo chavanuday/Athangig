@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevLaunch - Empower Your Ideas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-indigo-200 min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-indigo-600">DevLaunch</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-indigo-600">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-600">About</a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-600">Services</a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-600">Contact</a>
+                    <button class="px-4 py-2 text-indigo-600 border border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition">Sign In</button>
+                    <button class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">Sign Up</button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menuToggle" class="text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Home</a>
+                <a href="#" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">About</a>
+                <a href="#" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Services</a>
+                <a href="#" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+                <button class="w-full mt-2 px-4 py-2 text-indigo-600 border border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition">Sign In</button>
+                <button class="w-full mt-2 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-24">
+        <div class="text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
+                Empower Your Ideas with <span class="text-indigo-600">DevLaunch</span>
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-600 mb-8">
+                Affordable development for startups. Real-world experience for developers.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="px-8 py-3 bg-indigo-600 text-white text-lg rounded hover:bg-indigo-700 transition">Get Started</button>
+                <button class="px-8 py-3 border border-indigo-600 text-indigo-600 text-lg rounded hover:bg-indigo-600 hover:text-white transition">Learn More</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature Cards -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Open-Source Learning</h3>
+                <p class="text-gray-600">Gain real-world experience by contributing to client projects.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Fair Pricing</h3>
+                <p class="text-gray-600">Affordable development services with transparent pricing.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Win-Win Platform</h3>
+                <p class="text-gray-600">Connecting startups with talented developers for mutual growth.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            var mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
