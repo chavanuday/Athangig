@@ -3,86 +3,491 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevLaunch - Empower Your Ideas</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Athangig - Empowering Entrepreneurs and Developers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f39c12;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+            --card-background: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        main {
+            margin-top: 60px;
+            min-height: calc(100vh - 60px);
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #3a7bc8;
+        }
+
+        .card {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Page-specific styles */
+        #home .hero {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        #about .team-member {
+            text-align: center;
+        }
+
+        #about .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        #projects .project-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+        }
+
+        #dashboard .dashboard-card {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        #contact form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        #contact input,
+        #contact textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
-<body class="bg-gradient-to-br from-blue-100 to-indigo-200 min-h-screen">
-    <!-- Navbar -->
-    <nav class="bg-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <span class="text-2xl font-bold text-indigo-600">DevLaunch</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="#" class="text-gray-700 hover:text-indigo-600">Home</a>
-                    <a href="#" class="text-gray-700 hover:text-indigo-600">About</a>
-                    <a href="#" class="text-gray-700 hover:text-indigo-600">Services</a>
-                    <a href="#" class="text-gray-700 hover:text-indigo-600">Contact</a>
-                    <button class="px-4 py-2 text-indigo-600 border border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition">Sign In</button>
-                    <button class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">Sign Up</button>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="menuToggle" class="text-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Athangig</div>
+                <ul>
+                    <li><a href="#" data-page="home">Home</a></li>
+                    <li><a href="#" data-page="about">About Us</a></li>
+                    <li><a href="#" data-page="entrepreneurs">For Entrepreneurs</a></li>
+                    <li><a href="#" data-page="developers">For Developers</a></li>
+                    <li><a href="#" data-page="projects">Projects</a></li>
+                    <li><a href="#" data-page="dashboard">Dashboard</a></li>
+                    <li><a href="#" data-page="contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <!-- Mobile menu -->
-        <div id="mobileMenu" class="hidden md:hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Home</a>
-                <a href="#" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">About</a>
-                <a href="#" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Services</a>
-                <a href="#" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Contact</a>
-                <button class="w-full mt-2 px-4 py-2 text-indigo-600 border border-indigo-600 rounded hover:bg-indigo-600 hover:text-white transition">Sign In</button>
-                <button class="w-full mt-2 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">Sign Up</button>
-            </div>
-        </div>
-    </nav>
+    </header>
 
-    <!-- Hero Content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-24">
-        <div class="text-center">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
-                Empower Your Ideas with <span class="text-indigo-600">DevLaunch</span>
-            </h1>
-            <p class="text-xl sm:text-2xl text-gray-600 mb-8">
-                Affordable development for startups. Real-world experience for developers.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <button class="px-8 py-3 bg-indigo-600 text-white text-lg rounded hover:bg-indigo-700 transition">Get Started</button>
-                <button class="px-8 py-3 border border-indigo-600 text-indigo-600 text-lg rounded hover:bg-indigo-600 hover:text-white transition">Learn More</button>
+    <main>
+        <section id="home">
+            <div class="hero">
+                <div class="container">
+                    <h1>Empowering Entrepreneurs and Developers</h1>
+                    <p>Affordable project development and real-world experience through open-source contributions</p>
+                    <a href="#" class="btn" data-page="entrepreneurs">I'm an Entrepreneur</a>
+                    <a href="#" class="btn" data-page="developers">I'm a Developer</a>
+                </div>
             </div>
-        </div>
-    </div>
+            <div class="container">
+                <h2>How it works</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>For Entrepreneurs</h3>
+                        <ul>
+                            <li>Submit your project</li>
+                            <li>Get matched with developers</li>
+                            <li>Collaborate and track progress</li>
+                            <li>Receive your completed project</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>For Developers</h3>
+                        <ul>
+                            <li>Create your profile</li>
+                            <li>Apply for projects</li>
+                            <li>Work on real-world projects</li>
+                            <li>Earn experience and certifications</li>
+                        </ul>
+                    </div>
+                </div>
+                <h2>Featured Projects</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Project 1</h3>
+                        <p>Description of Project 1</p>
+                    </div>
+                    <div class="card">
+                        <h3>Project 2</h3>
+                        <p>Description of Project 2</p>
+                    </div>
+                    <div class="card">
+                        <h3>Project 3</h3>
+                        <p>Description of Project 3</p>
+                    </div>
+                </div>
+                <h2>Testimonials</h2>
+                <div class="grid">
+                    <div class="card">
+                        <p>"Athangig helped me build my startup's MVP at an affordable price. The developers were skilled and professional."</p>
+                        <p>- John Doe, Entrepreneur</p>
+                    </div>
+                    <div class="card">
+                        <p>"Thanks to Athangig, I gained real-world experience and landed my dream job right after graduation!"</p>
+                        <p>- Jane Smith, Developer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Feature Cards -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Open-Source Learning</h3>
-                <p class="text-gray-600">Gain real-world experience by contributing to client projects.</p>
+        <section id="about" class="hidden">
+            <div class="container">
+                <h1>About Us</h1>
+                <h2>Mission and Vision</h2>
+                <p>Our mission is to bridge the gap between entrepreneurs and developers, providing affordable solutions and valuable experience.</p>
+                <h2>Team Introduction</h2>
+                <div class="grid">
+                    <div class="team-member">
+                        <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-ct6DYdHBdpbTEOKwY6iSW3uP/user-nrBwwpqQwHPFTyQe0Nt2fSXo/img-Hy5Hy5Hy5Hy5Hy5Hy5Hy5Hy5.png?st=2023-04-14T09%3A47%3A26Z&se=2023-04-14T11%3A47%3A26Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-13T20%3A57%3A44Z&ske=2023-04-14T20%3A57%3A44Z&sks=b&skv=2021-08-06&sig=Hy5Hy5Hy5Hy5Hy5Hy5Hy5Hy5" alt="Team Member 1">
+                        <h3>John Doe</h3>
+                        <p>Founder & CEO</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-ct6DYdHBdpbTEOKwY6iSW3uP/user-nrBwwpqQwHPFTyQe0Nt2fSXo/img-Hy5Hy5Hy5Hy5Hy5Hy5Hy5Hy5.png?st=2023-04-14T09%3A47%3A26Z&se=2023-04-14T11%3A47%3A26Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-13T20%3A57%3A44Z&ske=2023-04-14T20%3A57%3A44Z&sks=b&skv=2021-08-06&sig=Hy5Hy5Hy5Hy5Hy5Hy5Hy5Hy5" alt="Team Member 2">
+                        <h3>Jane Smith</h3>
+                        <p>CTO</p>
+                    </div>
+                </div>
+                <h2>Platform Benefits</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>For Entrepreneurs</h3>
+                        <ul>
+                            <li>Affordable development</li>
+                            <li>Access to skilled developers</li>
+                            <li>Transparent process</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>For Developers</h3>
+                        <ul>
+                            <li>Real-world experience</li>
+                            <li>Portfolio building</li>
+                            <li>Skill development</li>
+                        </ul>
+                    </div>
+                </div>
+                <h2>FAQ</h2>
+                <div class="card">
+                    <h3>How does pricing work?</h3>
+                    <p>We offer flexible pricing based on project complexity and duration.</p>
+                </div>
+                <div class="card">
+                    <h3>How are developers vetted?</h3>
+                    <p>We have a rigorous screening process including skills assessment and background checks.</p>
+                </div>
             </div>
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Fair Pricing</h3>
-                <p class="text-gray-600">Affordable development services with transparent pricing.</p>
+        </section>
+
+        <section id="entrepreneurs" class="hidden">
+            <div class="container">
+                <h1>For Entrepreneurs</h1>
+                <h2>Service Offerings</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Web Development</h3>
+                        <p>Custom websites and web applications</p>
+                    </div>
+                    <div class="card">
+                        <h3>Mobile App Development</h3>
+                        <p>iOS and Android app development</p>
+                    </div>
+                    <div class="card">
+                        <h3>UI/UX Design</h3>
+                        <p>User-centered design solutions</p>
+                    </div>
+                </div>
+                <h2>Pricing Model</h2>
+                <p>We offer flexible pricing based on project scope and complexity. Contact us for a custom quote.</p>
+                <h2>How to Submit a Project</h2>
+                <ol>
+                    <li>Create an account</li>
+                    <li>Fill out the project submission form</li>
+                    <li>Review developer proposals</li>
+                    <li>Choose your developer and start collaborating</li>
+                </ol>
+                <h2>Success Stories</h2>
+                <div class="card">
+                    <h3>StartupX</h3>
+                    <p>"Athangig helped us launch our MVP in record time, saving us both time and money."</p>
+                </div>
+                <div class="card">
+                    <h3>TechInnovate</h3>
+                    <p>"The quality of work we received through Athangig was outstanding. Highly recommended!"</p>
+                </div>
             </div>
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Win-Win Platform</h3>
-                <p class="text-gray-600">Connecting startups with talented developers for mutual growth.</p>
+        </section>
+
+        <section id="developers" class="hidden">
+            <div class="container">
+                <h1>For Developers</h1>
+                <h2>Types of Opportunities</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Open-source Projects</h3>
+                        <p>Contribute to meaningful projects and build your portfolio</p>
+                    </div>
+                    <div class="card">
+                        <h3>Paid Gigs</h3>
+                        <p>Work on client projects and earn money</p>
+                    </div>
+                </div>
+                <h2>How to Join</h2>
+                <ol>
+                    <li>Create your developer profile</li>
+                    <li>Showcase your skills and portfolio</li>
+                    <li>Apply for projects that interest you</li>
+                    <li>Start collaborating and earning</li>
+                </ol>
+                <h2>Skills Development Roadmap</h2>
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript, React, Node.js</p>
+                </div>
+                <div class="card">
+                    <h3>Mobile Development</h3>
+                    <p>Swift, Kotlin, React Native, Flutter</p>
+                </div>
+                <h2>Certification Process</h2>
+                <p>Complete projects successfully to earn certifications in various technologies and skills.</p>
             </div>
+        </section>
+
+        <section id="projects" class="hidden">
+            <div class="container">
+                <h1>Projects Marketplace</h1>
+                <div class="grid">
+                    <div class="project-card">
+                        <h3>E-commerce Website</h3>
+                        <p>Looking for a developer to build a responsive e-commerce website.</p>
+                        <p><strong>Budget:</strong> $5000</p>
+                        <p><strong>Duration:</strong> 2 months</p>
+                        <a href="#" class="btn">Apply</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Mobile App for Fitness Tracking</h3>
+                        <p>Need a developer to create an iOS and Android app for fitness tracking.</p>
+                        <p><strong>Budget:</strong> $8000</p>
+                        <p><strong>Duration:</strong> 3 months</p>
+                        <a href="#" class="btn">Apply</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Blog Website Redesign</h3>
+                        <p>Seeking a UI/UX designer to redesign an existing blog website.</p>
+                        <p><strong>Budget:</strong> $3000</p>
+                        <p><strong>Duration:</strong> 1 month</p>
+                        <a href="#" class="btn">Apply</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dashboard" class="hidden">
+            <div class="container">
+                <h1>User Dashboard</h1>
+                <div class="grid">
+                    <div class="dashboard-card">
+                        <h3>Project Management</h3>
+                        <ul>
+                            <li>Active Projects: 2</li>
+                            <li>Completed Projects: 5</li>
+                            <li>Pending Proposals: 3</li>
+                        </ul>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Progress Tracking</h3>
+                        <p>Current Project: 75% complete</p>
+                        <progress value="75" max="100"></progress>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Communication Portal</h3>
+                        <p>3 unread messages</p>
+                        <a href="#" class="btn">View Messages</a>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Earnings/Payments</h3>
+                        <p>Total Earnings: $12,500</p>
+                        <p>Pending Payments: $2,000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="hidden">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+                <h2>Support Information</h2>
+                <p>Email: support@athangig.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+                <h2>Connect With Us</h2>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Athangig. All rights reserved.</p>
         </div>
-    </div>
+    </footer>
 
     <script>
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            var mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('hidden');
+        // Navigation
+        document.querySelectorAll('nav a, .btn').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = e.target.getAttribute('data-page');
+                if (page) {
+                    document.querySelectorAll('section').forEach(section => {
+                        section.classList.add('hidden');
+                    });
+                    document.getElementById(page).classList.remove('hidden');
+                }
+            });
         });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message. We will get back to you soon!');
+            e.target.reset();
+        });
+
+        // Show home page by default
+        document.getElementById('home').classList.remove('hidden');
     </script>
 </body>
 </html>
